@@ -81,18 +81,18 @@ void *hack_thread(void *arg) {
     } while (!g_il2cppBaseMap.isValid());
     // Pointers();
     // Hooks();
-    
+    mlovinit();
+    setShader("unity_SHC");
+    Wallhack();
+    LogShaders();
+    chamsint = 3;
     KITTY_LOGI("il2cpp base: %p", (void*)(g_il2cppBaseMap.startAddress));
     auto eglhandle = dlopen("libegl.so", RTLD_LAZY);
     auto eglSwapBuffers = dlsym(eglhandle, "eglSwapBuffers");
     DobbyHook((void*)eglSwapBuffers,(void*)hook_eglSwapBuffers,
               (void**)&old_eglSwapBuffers);
     void *sym_input = DobbySymbolResolver(("/system/lib/libinput.so"), ("_ZN7android13InputConsumer21initializeMotionEventEPNS_11MotionEventEPKNS_12InputMessageE"));
-    mlovinit();
-    setShader("_BumpMap");
-    Wallhack();
-    LogShaders();
-    chamsint = 3;
+    
     if (NULL != sym_input) {
         DobbyHook(sym_input,(void*)myInput,(void**)&origInput);
     }
