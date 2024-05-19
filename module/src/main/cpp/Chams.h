@@ -3,8 +3,8 @@
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include <dlfcn.h>
-#include <Substrate/SubstrateHook.h>
-#include <Substrate/CydiaSubstrate.h>
+#include "Substrate/SubstrateHook.h"
+#include "Substrate/CydiaSubstrate.h"
 
 static void *handle;
 static const char* shaderName;
