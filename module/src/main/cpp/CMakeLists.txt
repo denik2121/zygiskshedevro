@@ -50,6 +50,13 @@ add_library(${MODULE_NAME}
         KittyMemory/MemoryPatch.cpp
         main.cpp
         hook.cpp
+        Substrate/SubstrateHook.cpp
+        Substrate/SubstrateARM.hpp
+        Substrate/CydiaSubstrate.h
+        Substrate/hde64.c
+        Substrate/SymbolFinder.cpp
+        Substrate/SubstratePosixMemory.cpp
+        Substrate/SubstrateLog.hpp
         )
 
 set(DOBBY_LIB ${CMAKE_CURRENT_SOURCE_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/libdobby.a)

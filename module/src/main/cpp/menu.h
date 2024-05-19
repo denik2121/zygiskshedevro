@@ -5,6 +5,8 @@
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 
+#include "Chams.h"
+
 using namespace ImGui;
 
 void DrawMenu()
@@ -17,23 +19,13 @@ void DrawMenu()
             if (BeginTabItem(OBFUSCATE("Account"))) {
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
-                if (Button(OBFUSCATE("Add Currency"))) {
-                    // code for button action
-                    addCurrency = true;
+                if (Button(OBFUSCATE("Chams Wireframe"))) {
+                    enableWallhackW = true;
                 }
-                TextUnformatted(OBFUSCATE("Adds 1000 gems"));
-                if (Button(OBFUSCATE("Add Skins"))) {
-                    // code for button action
-                    addSkins = true;
-                }
-                Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
-                Checkbox(OBFUSCATE("Free Items"), &freeItems);
-                Checkbox(OBFUSCATE("Show Items"), &showAllItems);
                 EndTabItem();
             }
             EndTabBar();
         }
-        Patches();
         End();
     }
 }
