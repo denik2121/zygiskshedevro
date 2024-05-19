@@ -19,20 +19,6 @@ void DrawMenu()
             if (BeginTabItem(OBFUSCATE("Account"))) {
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
-                if (Button(OBFUSCATE("Chams Wireframe"))) {
-                    
-                    
-                 }
-                if (Button(OBFUSCATE("Chams"))) {
-                    
-                
-                 }
-                if (Button(OBFUSCATE("ChamsTest"))) {
-                    
-                }
-                if (Button(OBFUSCATE("ChamsTest2Wireframe"))) {
-                    chamsint = 3;
-                }
                 EndTabItem();
             }
             EndTabBar();
