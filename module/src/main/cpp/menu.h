@@ -24,8 +24,16 @@ void DrawMenu()
                     
                  }
                 if (Button(OBFUSCATE("Chams"))) {
-                    SetWallhack(true);           
+                    SetWallhack(true);   
+                
                  }
+                if (Button(OBFUSCATE("ChamsTest"))) {
+                    mlovinit();
+                    setShader("_BumpMap");
+                    Wallhack();
+                    LogShaders();
+                    SetWireframe(true);   
+                }
                 EndTabItem();
             }
             EndTabBar();
