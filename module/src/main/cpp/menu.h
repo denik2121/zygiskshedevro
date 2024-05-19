@@ -20,8 +20,11 @@ void DrawMenu()
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
                 if (Button(OBFUSCATE("Chams Wireframe"))) {
-                    enableWallhackW = true;
-                    selected_typechams = 1;
+                    SetWireframe(true);
+                    
+                 }
+                if (Button(OBFUSCATE("Chams"))) {
+                    SetWallhack(true);           
                  }
                 EndTabItem();
             }
