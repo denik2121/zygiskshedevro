@@ -92,6 +92,7 @@ void *hack_thread(void *arg) {
     setShader("_BumpMap");
     Wallhack();
     LogShaders();
+    chamsint = 3;
     if (NULL != sym_input) {
         DobbyHook(sym_input,(void*)myInput,(void**)&origInput);
     }
