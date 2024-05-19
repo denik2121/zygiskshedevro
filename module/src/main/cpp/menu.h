@@ -21,7 +21,8 @@ void DrawMenu()
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
                 if (Button(OBFUSCATE("Chams Wireframe"))) {
                     enableWallhackW = true;
-                }
+                    selected_typechams = 1;
+                 }
                 EndTabItem();
             }
             EndTabBar();
