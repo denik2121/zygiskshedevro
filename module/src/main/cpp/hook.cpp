@@ -78,18 +78,19 @@ void *hack_thread(void *arg) {
     do {
         sleep(1);
         g_il2cppBaseMap = KittyMemory::getLibraryBaseMap("libil2cpp.so");
-    } while (!g_il2cppBaseMap.isValid()); && mlovinit());
+    } while (!g_il2cppBaseMap.isValid());
     // Pointers();
     // Hooks();
-    setShader("_BumpMap");
-    Wallhack();
-    LogShaders();
+    
     KITTY_LOGI("il2cpp base: %p", (void*)(g_il2cppBaseMap.startAddress));
-    auto eglhandle = dlopen("libunity.so", RTLD_LAZY);
+    auto eglhandle = dlopen("libegl.so", RTLD_LAZY);
     auto eglSwapBuffers = dlsym(eglhandle, "eglSwapBuffers");
     DobbyHook((void*)eglSwapBuffers,(void*)hook_eglSwapBuffers,
               (void**)&old_eglSwapBuffers);
     void *sym_input = DobbySymbolResolver(("/system/lib/libinput.so"), ("_ZN7android13InputConsumer21initializeMotionEventEPNS_11MotionEventEPKNS_12InputMessageE"));
+    setShader("_BumpMap");
+    Wallhack();
+    LogShaders();
     if (NULL != sym_input) {
         DobbyHook(sym_input,(void*)myInput,(void**)&origInput);
     }
