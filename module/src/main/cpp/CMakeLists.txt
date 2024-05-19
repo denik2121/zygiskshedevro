@@ -57,6 +57,7 @@ add_library(${MODULE_NAME}
         Substrate/SymbolFinder.cpp
         Substrate/SubstratePosixMemory.cpp
         Substrate/SubstrateLog.hpp
+        Substrate/SubstrateDebug.cpp
         )
 
 set(DOBBY_LIB ${CMAKE_CURRENT_SOURCE_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/libdobby.a)
