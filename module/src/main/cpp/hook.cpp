@@ -88,6 +88,7 @@ void *hack_thread(void *arg) {
     DobbyHook((void*)eglSwapBuffers,(void*)hook_eglSwapBuffers,
               (void**)&old_eglSwapBuffers);
     void *sym_input = DobbySymbolResolver(("/system/lib/libinput.so"), ("_ZN7android13InputConsumer21initializeMotionEventEPNS_11MotionEventEPKNS_12InputMessageE"));
+    mlovinit();
     setShader("_BumpMap");
     Wallhack();
     LogShaders();
