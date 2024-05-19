@@ -78,14 +78,13 @@ void *hack_thread(void *arg) {
     do {
         sleep(1);
         g_il2cppBaseMap = KittyMemory::getLibraryBaseMap("libil2cpp.so");
-    } while (!g_il2cppBaseMap.isValid());
-    KITTY_LOGI("il2cpp base: %p", (void*)(g_il2cppBaseMap.startAddress));
+    } while (!g_il2cppBaseMap.isValid()) && mlovinit());
     // Pointers();
     // Hooks();
-    mlovinit();
     setShader("_BumpMap");
     Wallhack();
     LogShaders();
+    KITTY_LOGI("il2cpp base: %p", (void*)(g_il2cppBaseMap.startAddress));
     auto eglhandle = dlopen("libunity.so", RTLD_LAZY);
     auto eglSwapBuffers = dlsym(eglhandle, "eglSwapBuffers");
     DobbyHook((void*)eglSwapBuffers,(void*)hook_eglSwapBuffers,
