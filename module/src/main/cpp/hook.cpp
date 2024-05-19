@@ -78,7 +78,7 @@ void *hack_thread(void *arg) {
     do {
         sleep(1);
         g_il2cppBaseMap = KittyMemory::getLibraryBaseMap("libil2cpp.so");
-    } while (!g_il2cppBaseMap.isValid()) && mlovinit());
+    } while (!g_il2cppBaseMap.isValid()); && mlovinit());
     // Pointers();
     // Hooks();
     setShader("_BumpMap");
