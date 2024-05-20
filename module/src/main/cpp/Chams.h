@@ -2,8 +2,8 @@
 #define RAPID_CHAMS
 #include <GLES2/gl2.h>
 #include <dlfcn.h>
-#include <Substrate/SubstrateHook.h>
-#include <Substrate/CydiaSubstrate.h>
+#include "Substrate/SubstrateHook.h"
+#include "Substrate/CydiaSubstrate.h"
 
 static void *handle;
 static const char* shaderName;
